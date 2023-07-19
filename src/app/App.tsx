@@ -1,11 +1,14 @@
-import classNames from "classnames";
+import classNames from 'classnames';
 import './styles/index.scss';
+import { AppRouter } from './providers/router';
+import { useTheme } from './providers/ThemeProvider';
 
 export const App = () => {
+  const { theme } = useTheme();
+
   return (
-    <div className={classNames('app', 'light')}>
-      <div>App</div>
-      <h1>App</h1>
+    <div className={classNames('app', theme, 'duringChangeTheme')}>
+      <AppRouter />
     </div>
   );
-};
+}

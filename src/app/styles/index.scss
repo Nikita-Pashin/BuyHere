@@ -5,4 +5,15 @@
 
 .app {
   font-family: 'Roboto';
+
+  background: var(--bg-color);
+  color: var(--primary-color);
+
+  min-height: 100vh;
+}
+
+.app.duringChangeTheme {
+  transition-property: color, background-color;
+  transition-duration: .3s;
+  transition-timing-function: ease;
 }

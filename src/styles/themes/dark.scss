@@ -1,0 +1,6 @@
+@import '../globals/variables.scss';
+
+.app.dark {
+  background-color: $gray-700;
+  color: $gray-100;
+}

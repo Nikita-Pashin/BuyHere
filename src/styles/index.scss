@@ -1,0 +1,8 @@
+@import './lib/normalize.scss';
+@import url('./lib/fonts.scss');
+@import './themes/light.scss';
+@import './themes/dark.scss';
+
+.app {
+  font-family: 'Roboto';
+}

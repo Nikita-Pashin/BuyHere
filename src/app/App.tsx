@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import './styles/index.scss';
 
 export const App = () => {
   return (

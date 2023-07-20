@@ -1,15 +1,19 @@
 import { RouteProps } from 'react-router-dom';
 import { MainPage } from '../../../pages/MainPage';
 import { ProfilePage } from '../../../pages/ProfilePage';
+import { NotFoundPage } from '../../../pages/NotFoundPage/index';
 
 export enum AppRoutes {
   MAIN = 'main',
   PROFILE = 'profile',
+  NOT_FOUND = 'not_found',
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.PROFILE]: '/profile',
+  // Последний
+  [AppRoutes.NOT_FOUND]: '*',
 };
 
 export const routeConfig: Record<AppRoutes, RouteProps> = {
@@ -20,5 +24,9 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.PROFILE]: {
     path: RoutePath.profile,
     element: <ProfilePage />,
+  },
+  [AppRoutes.NOT_FOUND]: {
+    path: RoutePath.not_found,
+    element: <NotFoundPage />,
   },
 };

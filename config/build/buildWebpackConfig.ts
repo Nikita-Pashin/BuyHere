@@ -12,7 +12,7 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
     mode,
     entry: paths.entry,
     output: {
-      filename: 'bundle.[contenthash].js',
+      filename: '[name].[contenthash].js',
       path: paths.build,
       clean: true,
     },
@@ -21,17 +21,17 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
       rules: buildLoaders(options),
     },
     resolve: buildResolve(),
-  }
+  };
 
   const devConfig = {
     devtool: 'inline-source-map',
     devServer: buildDevServer(options),
-  }
+  };
 
   const config = {
     ...mainConfig,
-    ...(isDev ? devConfig : {})
-  }
+    ...(isDev ? devConfig : {}),
+  };
 
   return config;
 };

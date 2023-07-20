@@ -10,10 +10,23 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS",
     }
-  }
+  },
+  "include": [
+    "./config/jest/**/*.tsx",
+    "./config/jest/**/*.ts",
+    "./config/build/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.ts",
+    "./babel.config.json",
+    "./.eslintrc.js",
+    "./webpack.config.ts",
+  ],
 }

@@ -15,12 +15,9 @@ const MainPage: FC = () => {
 
   return (
     <div>
-      <AppLink to={RoutePath.profile}>Профиль</AppLink>
+      <AppLink to={RoutePath.profile}>{t('profile')}</AppLink>
       <button onClick={onClick} type="button">{t('theme')}</button>
       <p />
-      <div>123 dawd awd awdawd aWDUIOAhfi UOawFI UHawifH awhf Lakwhf OKawh</div>
-      <div>123 dawd awd awdawd aWDUIOAhfi UOawFI UHawifH awhf Lakwhf OKawh</div>
-      <div>123 dawd awd awdawd aWDUIOAhfi UOawFI UHawifH awhf Lakwhf OKawh</div>
     </div>
   );
 };

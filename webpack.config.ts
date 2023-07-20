@@ -9,11 +9,11 @@ export default (env: BuildEnv) => {
     build: path.resolve(__dirname, 'build'),
     html: path.resolve(__dirname, 'public', 'index.html'),
   };
-  
+
   const mode: BuildOptions['mode'] = env.mode || 'development';
   const isDev: BuildOptions['isDev'] = mode === 'development';
   const port: BuildOptions['port'] = env.port || 3000;
-  
+
   const config: webpack.Configuration = buildWebpackConfig({
     mode,
     paths,

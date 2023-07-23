@@ -23,6 +23,7 @@
     "./config/jest/**/*.tsx",
     "./config/jest/**/*.ts",
     "./config/build/**/*.ts",
+    "./config/storybook/**/*.ts",
     "./src/**/*.tsx",
     "./src/**/*.ts",
     "./babel.config.json",

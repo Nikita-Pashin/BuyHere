@@ -2,5 +2,6 @@
   "theme": "theme",
   "unexpected_error_has_occurred": "an unexpected error has occurred",
   "refresh_page": "refresh the page",
-  "page_not_found": "page not found"
+  "page_not_found": "page not found",
+  "loading": "loading"
 }

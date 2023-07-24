@@ -2,5 +2,6 @@
   "theme": "тема",
   "unexpected_error_has_occurred": "произошла непредвиденная ошибка",
   "refresh_page": "обновить страницу",
-  "page_not_found": "страница не найдена"
+  "page_not_found": "страница не найдена",
+  "loading": "loading"
 }

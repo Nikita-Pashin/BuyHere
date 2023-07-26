@@ -1,5 +1,9 @@
+@import 'app/styles/globals/variables';
+
 .container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+  padding-left: $spacing-16;
+  padding-right: $spacing-16;
 }

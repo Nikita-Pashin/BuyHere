@@ -1,8 +1,8 @@
 @import 'app/styles/globals/variables.scss';
 
 .header {
-  background-color: $gray-100;
-  box-shadow: $easy-shadow;
+  background-color: var(--bg-color-secondary);
+  box-shadow: var(--easy-shadow);
   height: $size-56;
   position: fixed;
   width: 100%;

@@ -3,6 +3,9 @@
 .app.dark {
   --bg-color: #{$gray-700};
   --inverted-bg-color: #{$gray-100};
+  --bg-color-secondary: #{$gray-600};
+  --inverted-bg-color-secondary: #{$gray-600};
   --primary-color: #{$gray-100};
   --inveted-primary-color: #{$gray-700};
+  --easy-shadow: none;
 }

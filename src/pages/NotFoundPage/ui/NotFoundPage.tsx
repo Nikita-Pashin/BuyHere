@@ -5,7 +5,7 @@ export const NotFoundPage = () => {
 
   return (
     <div>
-      {t('page_not_found')}
+      {t('Page not found')}
     </div>
   );
 };

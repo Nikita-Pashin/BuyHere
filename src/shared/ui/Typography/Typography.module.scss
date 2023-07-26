@@ -1,0 +1,34 @@
+@import '../../../app/styles/globals/variables.scss';
+
+.xs {
+  font-size: $font-size-10;
+}
+
+.s {
+  font-size: $font-size-12;
+}
+
+.m {
+  font-size: $font-size-14;
+}
+
+.l {
+  font-size: $font-size-18;
+}
+
+.xl {
+  font-size: $font-size-22;
+}
+
+.xxl {
+  font-size: $font-size-26;
+}
+
+.xxxl {
+  font-size: $font-size-30;
+}
+
+.bold {
+  font-family: $font-family-bold;
+  font-weight: 700;
+}

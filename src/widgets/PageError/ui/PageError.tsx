@@ -10,9 +10,9 @@ export const ErrorPage = () => {
 
   return (
     <div>
-      <p>{t('Произошла непредвиденная ошибка')}</p>
+      <p>{t('An unexpected error has occurred')}</p>
       <button onClick={reloadPage} type="button">
-        {t('Обновить страницу')}
+        {t('Refresh the page')}
       </button>
     </div>
   );

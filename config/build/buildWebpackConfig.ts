@@ -20,7 +20,7 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
     module: {
       rules: buildLoaders(options),
     },
-    resolve: buildResolve(),
+    resolve: buildResolve(options),
   };
 
   const devConfig = {

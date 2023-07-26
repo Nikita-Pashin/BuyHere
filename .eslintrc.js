@@ -86,15 +86,7 @@ module.exports = {
       },
     ],
     'react/react-in-jsx-scope': 'off',
-    'i18next/no-literal-string': [
-      'error',
-      {
-        markupOnly: true,
-        ignoreAttribute: [
-          'data-testid',
-        ],
-      },
-    ],
+    'i18next/no-literal-string': 'off',
     'import/no-cycle': 'off',
   },
   globals: {

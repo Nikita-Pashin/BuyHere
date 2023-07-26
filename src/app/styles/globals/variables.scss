@@ -1,6 +1,93 @@
-/* Colors */
+/* 1 step - 2px */
+$ui-step: calc(1 / 8);
 
+// Gray
 $gray-100: #fff;
 $gray-700: #1b1b1b;
 $gray-900: #000;
+
+// Blue
 $blue-500: #1976d2;
+
+// Size
+$size-60: $ui-step * 30rem;
+$size-58: $ui-step * 29rem;
+$size-56: $ui-step * 28rem;
+$size-54: $ui-step * 27rem;
+$size-52: $ui-step * 26rem;
+$size-50: $ui-step * 25rem;
+$size-48: $ui-step * 24rem;
+$size-46: $ui-step * 23rem;
+$size-44: $ui-step * 22rem;
+$size-42: $ui-step * 21rem;
+$size-40: $ui-step * 20rem;
+$size-38: $ui-step * 19rem;
+$size-36: $ui-step * 18rem;
+$size-34: $ui-step * 17rem;
+$size-32: $ui-step * 16rem;
+$size-30: $ui-step * 15rem;
+$size-28: $ui-step * 14rem;
+$size-26: $ui-step * 13rem;
+$size-24: $ui-step * 12rem;
+$size-22: $ui-step * 11rem;
+$size-20: $ui-step * 10rem;
+$size-18: $ui-step * 9rem;
+$size-16: $ui-step * 8rem;
+$size-14: $ui-step * 7rem;
+$size-12: $ui-step * 6rem;
+$size-10: $ui-step * 5rem;
+$size-8: $ui-step * 4rem;
+$size-6: $ui-step * 3rem;
+$size-4: $ui-step * 2rem;
+$size-2: 1rem;
+
+// Spacing
+$spacing-32: $size-32;
+$spacing-30: $size-30;
+$spacing-28: $size-28;
+$spacing-26: $size-26;
+$spacing-24: $size-24;
+$spacing-20: $size-20;
+$spacing-16: $size-16;
+$spacing-14: $size-14;
+$spacing-12: $size-12;
+$spacing-10: $size-10;
+$spacing-8: $size-8;
+$spacing-6: $size-6;
+$spacing-4: $size-4;
+$spacing-2: $size-2;
+
+// Font-size
+$font-size-32: $size-32;
+$font-size-30: $size-30;
+$font-size-28: $size-28;
+$font-size-26: $size-26;
+$font-size-24: $size-24;
+$font-size-22: $size-22;
+$font-size-20: $size-20;
+$font-size-18: $size-18;
+$font-size-16: $size-16;
+$font-size-14: $size-14;
+$font-size-12: $size-12;
+$font-size-10: $size-10;
+$font-size-8: $size-8;
+
+// Line-height
+$line-height-32: $size-32;
+$line-height-28: $size-28;
+$line-height-24: $size-24;
+$line-height-22: $size-22;
+$line-height-20: $size-20;
+$line-height-16: $size-16;
+$line-height-14: $size-14;
+$line-height-12: $size-12;
+
+// Font-size
+$font-family-primary: '"Roboto"', sans-serif;
+$font-family-bold: '"Roboto-Bold"', sans-serif;
+
+// Box-shadow
+$easy-shadow: 0 2px 2px 0 rgb(0 0 0 / 20%);
+
+// Constansts
+$header-height: $size-56;

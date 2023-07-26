@@ -1,7 +1,8 @@
 {
-  "theme": "тема",
-  "unexpected_error_has_occurred": "произошла непредвиденная ошибка",
-  "refresh_page": "обновить страницу",
-  "page_not_found": "страница не найдена",
-  "loading": "loading"
+  "Theme": "тема",
+  "An unexpected error has occurred": "произошла непредвиденная ошибка",
+  "Refresh the page": "обновить страницу",
+  "Page not found": "страница не найдена",
+  "Buy here!": "Купи здесь!",
+  "Loading": "loading"
 }

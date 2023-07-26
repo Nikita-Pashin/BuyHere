@@ -1,7 +1,8 @@
 {
-  "theme": "theme",
-  "unexpected_error_has_occurred": "an unexpected error has occurred",
-  "refresh_page": "refresh the page",
-  "page_not_found": "page not found",
-  "loading": "loading"
+  "Theme": "Theme",
+  "An unexpected error has occurred": "An unexpected error has occurred",
+  "Refresh the page": "Refresh the page",
+  "Page not found": "Page not found",
+  "Buy here!": "Buy here!",
+  "Loading": "Loading"
 }

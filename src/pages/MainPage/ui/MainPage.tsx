@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PageWrapper } from 'widgets/PageWrapper';
-import { Modal } from 'shared/ui/Modal/Modal';
 import { useTheme } from '../../../app/providers/ThemeProvider/index';
 import { RoutePath } from '../../../shared/config/routeConfig/routeConfig';
 import { AppLink } from '../../../shared/ui/AppLink';

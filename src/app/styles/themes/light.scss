@@ -1,8 +1,10 @@
 @import '../globals/variables.scss';
 
-.app.light {
+.appLightTheme {
   --bg-color: #{$gray-100};
   --inverted-bg-color: #{$gray-700};
+  --bg-color-secondary: #{$gray-100};
+  --inverted-bg-color-secondary: #{$gray-600};
   --primary-color: #{$gray-700};
   --inveted-primary-color: #{$gray-100};
   --easy-shadow: #{$easy-shadow};

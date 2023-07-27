@@ -3,6 +3,7 @@ import {
   FC, ReactNode, useCallback, useEffect,
 } from 'react';
 import classNames from 'classnames';
+import { useTheme } from 'app/providers/ThemeProvider';
 import { Portal } from '../Portal';
 import s from './Modal.module.scss';
 
@@ -16,6 +17,8 @@ export interface ModalProps {
 export const Modal: FC<ModalProps> = ({
   children, className, isOpen, onClose,
 }) => {
+  const { theme } = useTheme();
+
   const onKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') {
       onClose();
@@ -42,7 +45,7 @@ export const Modal: FC<ModalProps> = ({
 
   return (
     <Portal>
-      <div className={classNames(s.modal, className, s.opened)}>
+      <div className={classNames(s.modal, className, s.opened, theme)}>
         {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
         <div className={s.overlay} onClick={onClose}>
           {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}

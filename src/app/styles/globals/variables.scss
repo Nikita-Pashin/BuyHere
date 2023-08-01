@@ -41,7 +41,7 @@ $size-10: $ui-step * 5rem;
 $size-8: $ui-step * 4rem;
 $size-6: $ui-step * 3rem;
 $size-4: $ui-step * 2rem;
-$size-2: 1rem;
+$size-2: $ui-step * 1rem;
 
 // Spacing
 $spacing-32: $size-32;
@@ -84,12 +84,27 @@ $line-height-16: $size-16;
 $line-height-14: $size-14;
 $line-height-12: $size-12;
 
-// Font-size
+// Font-family
 $font-family-primary: '"Roboto"', sans-serif;
 $font-family-bold: '"Roboto-Bold"', sans-serif;
 
+// Typography
+@mixin font-m($color: false) {
+  font-size: $font-size-16;
+  line-height: $line-height-24;
+
+  @if $color {
+    color: $color;
+  }
+}
+
 // Box-shadow
-$easy-shadow: 0 2px 2px 0 rgb(0 0 0 / 20%);
+$easy-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 20%);
+$medium-box-shadow: 0 4px 4px 0 rgb(0 0 0 / 20%);
+
+// Border-box
+$easy-border: $size-4;
+$medium-border: $size-8;
 
 // Constansts
 $header-height: $size-56;

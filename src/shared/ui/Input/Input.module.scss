@@ -1,0 +1,21 @@
+@import 'app/styles/globals/variables.scss';
+
+.input {
+  color: var(--primary-color);
+  font-family: $font-family-primary;
+  background-color: var(--bg-color-secondary);
+  border: 1px solid var(--inverted-bg-color);
+  border-radius: $medium-border;
+  transition: box-shadow 0.3s ease;
+  outline: none;
+
+  &:focus {
+    box-shadow: $medium-box-shadow;
+  }
+}
+
+.m {
+  padding: $spacing-12;
+
+  @include font-m(false);
+}

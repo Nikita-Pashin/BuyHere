@@ -1,16 +1,16 @@
 @import 'app/styles/globals/variables.scss';
 
 .buttonSquare {
-  background-color: var(--bg-color);
-  border: 1px solid var(--inverted-bg-color);
-  border-radius: 8px;
+  background-color: var(--inverted-bg-color);
+  border: none;
+  border-radius: $medium-border;
   font-family: $font-family-bold;
   font-weight: 700;
   transition: background-color 0.3s ease;
-  color: var(--primary-color);
+  color: var(--inverted-primary-color);
 
   &:hover {
-    background-color: var(--bg-color-hover);
+    background-color: var(--inverted-bg-color-hover);
   }
 }
 

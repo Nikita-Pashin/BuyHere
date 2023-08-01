@@ -1,12 +1,22 @@
 @import '../globals/variables.scss';
 
 .appLightTheme {
+  // --bg-color
   --bg-color: #{$gray-100};
   --bg-color-hover: #{$gray-200};
   --inverted-bg-color: #{$gray-700};
+  --inverted-bg-color-hover: #{$gray-600};
+
+  // --bg-color-secondary
   --bg-color-secondary: #{$gray-100};
+  --bg-color-secondary-hover: #000;
   --inverted-bg-color-secondary: #{$gray-600};
+  --inverted-bg-color-secondary-hover: #000;
+
+  // --primary-color
   --primary-color: #{$gray-700};
-  --inveted-primary-color: #{$gray-100};
-  --easy-shadow: #{$easy-shadow};
+  --inverted-primary-color: #{$gray-100};
+
+  // variables
+  --easy-shadow: #{$easy-box-shadow};
 }

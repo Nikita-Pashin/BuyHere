@@ -18,12 +18,13 @@ export type ButtonGeneralProps<T extends ButtonGeneralTypes> = {
 } & ButtonGeneralTypeProps[T] & CommonButtonProps;
 
 export const ButtonGeneral = <T extends ButtonGeneralTypes>({
-  typeButton, className, children, size = 'm', ...otherProps
+  typeButton, className, children, disabled, size = 'm', ...otherProps
 }: ButtonGeneralProps<T>) => {
   const necessaryProps = {
     size,
     type: 'button',
-    className: classNames(className, s.generalButton),
+    className: classNames(className, s.generalButton, disabled && s.disabled),
+    disabled,
     ...otherProps,
   };
 

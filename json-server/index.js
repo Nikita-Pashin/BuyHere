@@ -23,7 +23,7 @@ server.post('/login', (req, res) => {
     const { users = [] } = db;
 
     const userFromBd = users.find(
-      (user: any) => user.username === username && user.password === password,
+      (user) => user.username === username && user.password === password,
     );
 
     if (userFromBd) {

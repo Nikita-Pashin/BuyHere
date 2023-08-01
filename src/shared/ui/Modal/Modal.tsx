@@ -4,20 +4,23 @@ import {
 } from 'react';
 import classNames from 'classnames';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { useIsMounted } from 'shared/hooks/useIsMounted';
 import { Portal } from '../Portal';
 import s from './Modal.module.scss';
 
 export interface ModalProps {
-  className?: string;
-  children?: ReactNode;
-  isOpen?: boolean;
-  onClose?: () => void;
+  isOpen: boolean,
+  children: ReactNode,
+  onClose: () => void,
+  className?: string,
+  lazy?: boolean,
 }
 
 export const Modal: FC<ModalProps> = ({
-  children, className, isOpen, onClose,
+  children, className, isOpen, lazy, onClose,
 }) => {
   const { theme } = useTheme();
+  const isMounted = useIsMounted();
 
   const onKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.key === 'Escape') {
@@ -38,6 +41,10 @@ export const Modal: FC<ModalProps> = ({
       window.removeEventListener('keydown', onKeyDown);
     };
   }, [isOpen, onKeyDown]);
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   if (!isOpen) {
     return null;

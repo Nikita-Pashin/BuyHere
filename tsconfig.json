@@ -24,7 +24,6 @@
     "./config/jest/**/*.ts",
     "./config/build/**/*.ts",
     "./config/storybook/**/*.ts",
-    "./json-server/**/*.ts",
     "./src/**/*.tsx",
     "./src/**/*.ts",
     "./babel.config.json",

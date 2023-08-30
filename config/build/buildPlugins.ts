@@ -23,13 +23,13 @@ export const buildPlugins = (options: BuildOptions): webpack.WebpackPluginInstan
 
   const devPlugins = [
     new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }),
   ];
 
   return [
     ...plugins,
     ...(options.isDev ? devPlugins : []),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+    }),
   ];
 };

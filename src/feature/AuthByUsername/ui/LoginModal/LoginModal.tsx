@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import { FC, Suspense } from 'react';
 import { Modal, ModalProps } from 'shared/ui/Modal/Modal';
-import { LoginForm } from '../LoginForm/LoginForm';
+import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 
 type LoginModalProps = Omit<ModalProps, 'children'>;
 
@@ -12,6 +12,8 @@ export const LoginModal: FC<LoginModalProps> = ({
     onClose={onClose}
     className={className}
   >
-    <LoginForm />
+    <Suspense fallback="Loading...">
+      <LoginFormAsync />
+    </Suspense>
   </Modal>
 );

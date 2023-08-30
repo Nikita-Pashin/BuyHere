@@ -4,17 +4,17 @@
   // --bg-color
   --bg-color: #{$gray-100};
   --bg-color-hover: #{$gray-200};
-  --inverted-bg-color: #{$gray-700};
-  --inverted-bg-color-hover: #{$gray-600};
+  --inverted-bg-color: #{$gray-1000};
+  --inverted-bg-color-hover: #{$gray-900};
 
   // --bg-color-secondary
   --bg-color-secondary: #{$gray-100};
-  --bg-color-secondary-hover: #000;
-  --inverted-bg-color-secondary: #{$gray-600};
-  --inverted-bg-color-secondary-hover: #000;
+  --bg-color-secondary-hover: #{$gray-1100};
+  --inverted-bg-color-secondary: #{$gray-900};
+  --inverted-bg-color-secondary-hover: #{$gray-1100};
 
   // --primary-color
-  --primary-color: #{$gray-700};
+  --primary-color: #{$gray-1000};
   --inverted-primary-color: #{$gray-100};
 
   // variables

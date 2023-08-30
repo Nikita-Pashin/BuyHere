@@ -8,18 +8,19 @@ interface TypographyConstructorProps {
   variant: Variants,
   as?: 'div' | 'span' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
   bold?: boolean,
+  className?: string,
 }
 
 type TypographyProps = Omit<TypographyConstructorProps, 'variant'>;
 
 const Typography: FC<TypographyConstructorProps> = ({
-  variant, children, bold, as = 'span', ...restProps
+  variant, children, bold, as = 'span', className, ...restProps
 }) => {
   const Component = as;
 
   return (
     <Component
-      className={classNames(s[variant], bold && s.bold)}
+      className={classNames(s[variant], bold && s.bold, className && className)}
       {...restProps}
     >
       {children}

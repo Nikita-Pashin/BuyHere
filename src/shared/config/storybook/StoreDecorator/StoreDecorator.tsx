@@ -1,14 +1,9 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { Story } from '@storybook/react';
-import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
-import { Provider } from 'react-redux';
+import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
+import { DeepPartial } from '@reduxjs/toolkit';
 
-export const StoreDecorator = (
-  initialState?: DeepPartial<StateSchema>,
-) => (StoryComponent: Story) => (
-  // eslint-disable-next-line
-  // @ts-ignore
-  <Provider store={initialState}>
+export const StoreDecorator = (state: DeepPartial<StateSchema>) => (StoryComponent: Story) => (
+  <StoreProvider initialState={state}>
     <StoryComponent />
-  </Provider>
+  </StoreProvider>
 );

@@ -14,6 +14,7 @@ export const App = () => {
   }, [dispatch]);
 
   return (
+    // TODO: duringChangeTheme refacoring
     <div className={classNames('app', theme, 'duringChangeTheme')}>
       <AppRouter />
     </div>

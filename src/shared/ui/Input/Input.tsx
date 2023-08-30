@@ -8,10 +8,11 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   value: string,
   className?: string,
   inputSize?: Sizes,
+  stretch?: boolean,
 }
 
 export const Input: FC<InputProps> = ({
-  value, onChange, className, inputSize = 'm', ...otherProps
+  value, onChange, className, inputSize = 'm', stretch, ...otherProps
 }) => {
   const { t } = useTranslation();
 
@@ -22,6 +23,7 @@ export const Input: FC<InputProps> = ({
         s[inputSize],
         s.input,
         className,
+        stretch && s.stretch,
       )}
       onChange={onChange}
       placeholder={t('Enter text')}

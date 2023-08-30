@@ -26,11 +26,11 @@ const Template: ComponentStory<typeof Input> = () => {
   );
 };
 
-export const ButtonSquareLightM = Template.bind({});
-ButtonSquareLightM.args = {
+export const InputSquareLightM = Template.bind({});
+InputSquareLightM.args = {
 };
 
-export const ButtonSquareDarkM = Template.bind({});
-ButtonSquareDarkM.args = {
+export const InputSquareDarkM = Template.bind({});
+InputSquareDarkM.args = {
 };
-ButtonSquareDarkM.decorators = [ThemeDecorator(Theme.DARK)];
+InputSquareDarkM.decorators = [ThemeDecorator(Theme.DARK)];

@@ -23,7 +23,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps>(
 
       return response.data;
     } catch (e) {
-      return thinkAPI.rejectWithValue('Wrong login or password');
+      return thinkAPI.rejectWithValue('error');
     }
   },
 );

@@ -1,11 +1,14 @@
 import { ReducersMapObject, configureStore } from '@reduxjs/toolkit';
+import { $api } from 'shared/api/api';
 import { userReducer } from 'entities/User';
+import { NavigateFunction } from 'react-router-dom';
 import { StateSchema } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 
 export function createReduxStore(
   initialState?: StateSchema,
   asyncReducers?: ReducersMapObject<StateSchema>,
+  navigate?: NavigateFunction,
 ) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
@@ -18,6 +21,14 @@ export function createReduxStore(
     reducer: reducerManager.reduce,
     devTools: __IS_DEV__,
     preloadedState: initialState,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+      thunk: {
+        extraArgument: {
+          api: $api,
+          navigate,
+        },
+      },
+    }),
   });
 
   // eslint-disable-next-line

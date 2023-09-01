@@ -1,8 +1,9 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { TextL } from 'shared/ui/Typography';
 import { getLoginUsername } from 'feature/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginError } from 'feature/AuthByUsername/model/selectors/getLoginError/getLoginError';
@@ -17,9 +18,13 @@ const initialReducers: ReducersList = {
   login: loginReducer,
 };
 
-const LoginForm = () => {
+interface LoginFormProps {
+  onSuccess: () => void,
+}
+
+const LoginForm: FC<LoginFormProps> = ({ onSuccess }) => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const username = useSelector(getLoginUsername);
   const error = useSelector(getLoginError);
@@ -34,9 +39,12 @@ const LoginForm = () => {
     dispatch(loginActions.setPassword(value));
   };
 
-  const onLoginClick = () => {
-    dispatch(loginByUsername({ username, password }));
-  };
+  const onLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess();
+    }
+  }, [dispatch, onSuccess, password, username]);
 
   return (
     <DynamicModuleLoader

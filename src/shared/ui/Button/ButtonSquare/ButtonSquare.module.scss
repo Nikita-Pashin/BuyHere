@@ -17,5 +17,8 @@
 .m {
   font-size: $font-size-16;
   line-height: $line-height-24;
-  padding: $spacing-12;
+  padding-top: $spacing-12;
+  padding-bottom: $spacing-12;
+  padding-left: $spacing-20;
+  padding-right: $spacing-20;
 }

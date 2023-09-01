@@ -5,6 +5,7 @@
     "indentation": [2],
     "string-quotes": "single",
     "color-hex-length": "long",
+    "declaration-block-no-redundant-longhand-properties": null,
     "scss/at-import-partial-extension": null
   }
 }

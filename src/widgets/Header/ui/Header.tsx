@@ -3,6 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button';
 import { LoginModal } from 'feature/AuthByUsername';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { useSelector } from 'react-redux';
+import { getUserAuthData, userActions } from 'entities/User';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { TextXXXL } from '../../../shared/ui/Typography';
 import { Container } from '../../../shared/ui/Container';
 import s from './Header.module.scss';
@@ -10,6 +13,8 @@ import s from './Header.module.scss';
 export const Header = () => {
   const { t, i18n } = useTranslation();
   const { toggleTheme } = useTheme();
+  const userAuthData = useSelector(getUserAuthData);
+  const dispatch = useAppDispatch();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -24,6 +29,28 @@ export const Header = () => {
   const openAuthModal = () => {
     setIsOpen(true);
   };
+
+  const LogOut = () => {
+    dispatch(userActions.setLogOut());
+  };
+
+  const LoginComponent = userAuthData ? (
+    <Button
+      typeButton="ButtonSquare"
+      onClick={LogOut}
+      className={s.btn}
+    >
+      {t('Leave')}
+    </Button>
+  ) : (
+    <Button
+      typeButton="ButtonSquare"
+      onClick={openAuthModal}
+      className={s.btn}
+    >
+      {t('User')}
+    </Button>
+  );
 
   return (
     <header className={s.header}>
@@ -46,13 +73,7 @@ export const Header = () => {
           >
             {t('Theme')}
           </Button>
-          <Button
-            typeButton="ButtonSquare"
-            onClick={openAuthModal}
-            className={s.btn}
-          >
-            {t('User')}
-          </Button>
+          {LoginComponent}
         </div>
       </Container>
       <LoginModal

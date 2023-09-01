@@ -20,3 +20,11 @@
 .btn ~ .btn {
   margin-left: $spacing-16;
 }
+
+.buttons {
+  display: flex;
+}
+
+.avatar {
+  margin-left: $spacing-16;
+}

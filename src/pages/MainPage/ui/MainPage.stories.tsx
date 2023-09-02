@@ -11,5 +11,5 @@ const Template: ComponentStory<typeof MainPage> = () => <MainPage />;
 
 export const LightPage = Template.bind({});
 LightPage.decorators = [
-  StoreDecorator(),
+  StoreDecorator({}),
 ];

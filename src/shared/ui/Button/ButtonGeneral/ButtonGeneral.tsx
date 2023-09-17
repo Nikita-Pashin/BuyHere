@@ -2,14 +2,12 @@ import classNames from 'classnames';
 import { CommonButtonProps } from '../types/CommonButtonProps';
 import { ButtonSquare, ButtonSquareProps } from '../ButtonSquare/ButtonSquare';
 import s from './ButtonGeneral.module.scss';
-import { ButtonIcon } from '../ButtonIcon/ButtonIcon';
+import { ButtonIcon, ButtonIconProps } from '../ButtonIcon/ButtonIcon';
 
 type ButtonGeneralTypes = 'ButtonSquare' | 'ButtonIcon';
 
 type ButtonGeneralTypeProps = {
-  ButtonIcon: {
-    lol: string,
-  },
+  ButtonIcon: ButtonIconProps,
   ButtonSquare: ButtonSquareProps,
 };
 
@@ -31,7 +29,9 @@ export const ButtonGeneral = <T extends ButtonGeneralTypes>({
 
   if (typeButton === 'ButtonIcon') {
     return (
-      <ButtonIcon>
+      <ButtonIcon
+        {...necessaryProps}
+      >
         {children}
       </ButtonIcon>
     );

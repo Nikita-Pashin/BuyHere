@@ -3,7 +3,7 @@
 .buttonSquare {
   background-color: var(--inverted-bg-color);
   border: none;
-  border-radius: $medium-border;
+  border-radius: $m-border-radius;
   font-family: $font-family-bold;
   font-weight: 700;
   transition: background-color 0.3s ease;

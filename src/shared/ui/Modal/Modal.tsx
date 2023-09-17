@@ -52,7 +52,7 @@ export const Modal: FC<ModalProps> = ({
 
   return (
     <Portal>
-      <div className={classNames(s.modal, className, s.opened, theme, 'addCssVariables')}>
+      <div className={classNames(s.modal, className, s.opened, theme)}>
         {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
         <div className={s.overlay} onClick={onClose}>
           {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}

@@ -1,0 +1,11 @@
+@import 'app/styles/globals/variables.scss';
+
+.menu {
+  position: fixed;
+  background-color: var(--bg-color);
+  padding: $spacing-8;
+  border-radius: $s-border-radius;
+  box-shadow: $medium-box-shadow;
+  z-index: 100;
+  width: 280px;
+}

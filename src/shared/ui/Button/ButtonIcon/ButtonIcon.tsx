@@ -1,14 +1,22 @@
 import { FC, ReactNode } from 'react';
+import classNames from 'classnames';
 import { ButtonBase, ButtonBaseProps } from '../ButtonBase/ButtonBase';
 import s from './ButtonIcon.module.scss';
 
-interface ButtonIconProps extends ButtonBaseProps {
+export interface ButtonIconProps extends ButtonBaseProps {
   children: ReactNode,
+  round?: boolean,
 }
 
-export const ButtonIcon: FC<ButtonIconProps> = ({ children, ...restProps }) => (
+export const ButtonIcon: FC<ButtonIconProps> = ({
+  children, round, className, ...restProps
+}) => (
   <ButtonBase
-    className={s.buttonIcon}
+    className={classNames(
+      s.buttonIcon,
+      round && s.round,
+      className,
+    )}
     {...restProps}
   >
     {children}

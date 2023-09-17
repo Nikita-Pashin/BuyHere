@@ -1,0 +1,14 @@
+@import 'app/styles/globals/variables.scss';
+
+.buttonIcon {
+  border-radius: $medium-border;
+  background-color: var(--inverted-bg-color);
+  height: $size-48;
+  width: $size-48;
+}
+
+.buttonIcon svg {
+  height: $size-36;
+  width: $size-36;
+  fill: var(--inverted-primary-color);
+}

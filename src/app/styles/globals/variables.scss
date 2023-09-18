@@ -105,8 +105,10 @@ $font-family-bold: '"Roboto-Bold"', sans-serif;
 }
 
 // Box-shadow
-$easy-box-shadow: 0 2px 2px 0 rgb(0 0 0 / 20%);
-$medium-box-shadow: 0 4px 4px 0 rgb(0 0 0 / 20%);
+$easy-box-shadow: 0 0 2px 0 rgb(0 0 0 / 20%);
+$easy-box-shadow-bottom: 0 2px 2px 0 rgb(0 0 0 / 20%);
+$medium-box-shadow: 0 8px 16px 0 rgb(23 23 23 / 10%);
+$medium-box-shadow-bottom: 0 4px 4px 0 rgb(0 0 0 / 20%);
 
 // Border-box
 $easy-border: $size-4;

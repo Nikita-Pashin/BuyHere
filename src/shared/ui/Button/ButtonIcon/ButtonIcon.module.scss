@@ -5,6 +5,11 @@
   background-color: var(--inverted-bg-color);
   height: $size-48;
   width: $size-48;
+  transition: background-color 0.3s ease;
+}
+
+.buttonIcon:hover {
+  background-color: var(--inverted-bg-color-hover);
 }
 
 .buttonIcon svg {

@@ -5,7 +5,7 @@ import { LoginModal } from 'feature/AuthByUsername';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
-import { AvatarInHeader } from 'feature/AvatarInHeader/AvatarInHeader';
+import { AvatarInHeader } from 'feature/AvatarInHeader';
 import { TextXXXL } from '../../../shared/ui/Typography';
 import { Container } from '../../../shared/ui/Container';
 import s from './Header.module.scss';

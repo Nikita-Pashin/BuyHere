@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from 'react';
 
-const currentRem = 16;
+const currentRem = 24;
 
 interface IconWrapperProps {
   color?: string,

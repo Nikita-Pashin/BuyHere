@@ -18,5 +18,8 @@
   --inverted-primary-color: #{$gray-1000};
 
   // variables
-  --easy-shadow: none;
+  --easy-box-shadow: #{$easy-dark-box-shadow};
+  --easy-box-shadow-bottom: #{$easy-dark-box-shadow-bottom};
+  --medium-box-shadow: #{$medium-dark-box-shadow-bottom};
+  --medium-box-shadow-bottom: #{$medium-dark-box-shadow-bottom};
 }

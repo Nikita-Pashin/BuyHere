@@ -10,5 +10,9 @@
   "Enter text": "Enter text",
   "Wrong login or password": "Wrong login or password",
   "Leave": "Leave",
+  "My profile": "My profile",
+  "About account": "About account",
+  "Settings": "Settings",
+  "LogOut": "LogOut",
   "Loading": "Loading"
 }

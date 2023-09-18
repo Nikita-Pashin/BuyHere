@@ -7,7 +7,8 @@ import { useClickOutside } from 'shared/hooks/useClickOutside';
 import s from './Menu.module.scss';
 
 interface MenuProps {
-  children: ReactNode
+  children: ReactNode,
+  menuChildren: ReactNode,
 }
 
 interface Coords {
@@ -16,7 +17,7 @@ interface Coords {
 }
 
 export const Menu: FC<MenuProps> = ({
-  children,
+  children, menuChildren,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [coords, setCoords] = useState<Coords>({
@@ -85,12 +86,13 @@ export const Menu: FC<MenuProps> = ({
                 left: coords.x,
                 top: coords.x - 4,
                 opacity: 1,
+                // TODO:
                 // eslint-disable-next-line
                 // @ts-ignore
                 ...transitionStyles[state],
               }}
             >
-              123
+              {menuChildren}
             </div>
           )}
         </Transition>

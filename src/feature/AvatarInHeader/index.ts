@@ -1,0 +1,1 @@
+export { AvatarInHeader } from './AvatarInHeader';

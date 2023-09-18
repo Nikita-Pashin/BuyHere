@@ -1,0 +1,7 @@
+@import 'app/styles/globals/variables';
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: var(--inverted-bg-color);
+}

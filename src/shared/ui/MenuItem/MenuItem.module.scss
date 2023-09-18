@@ -1,0 +1,8 @@
+@import 'app/styles/globals/variables.scss';
+
+.menuItem {
+  text-align: left;
+  border-radius: 0;
+  margin: #{$spacing-4} #{$spacing-8};
+  width: calc(100% - #{$spacing-16});
+}

@@ -10,5 +10,9 @@
   "Enter text": "Введите текст",
   "Wrong login or password": "Не верный логин или пароль",
   "Leave": "Выйти",
+  "My profile": "Мой профиль",
+  "About account": "О аккаунте",
+  "Settings": "Настройки",
+  "LogOut": "Выйти",
   "Loading": "Загрузка"
 }

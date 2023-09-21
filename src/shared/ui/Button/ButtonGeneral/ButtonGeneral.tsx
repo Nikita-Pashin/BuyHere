@@ -3,12 +3,14 @@ import { CommonButtonProps } from '../types/CommonButtonProps';
 import { ButtonSquare, ButtonSquareProps } from '../ButtonSquare/ButtonSquare';
 import s from './ButtonGeneral.module.scss';
 import { ButtonIcon, ButtonIconProps } from '../ButtonIcon/ButtonIcon';
+import { ButtonSquareLink, ButtonSquareLinkProps } from '../ButtonSquareLink/ButtonSquareLink';
 
-type ButtonGeneralTypes = 'ButtonSquare' | 'ButtonIcon';
+type ButtonGeneralTypes = 'ButtonSquare' | 'ButtonSquareLink' | 'ButtonIcon';
 
 type ButtonGeneralTypeProps = {
   ButtonIcon: ButtonIconProps,
   ButtonSquare: ButtonSquareProps,
+  ButtonSquareLink: ButtonSquareLinkProps,
 };
 
 export type ButtonGeneralProps<T extends ButtonGeneralTypes> = {
@@ -26,6 +28,19 @@ export const ButtonGeneral = <T extends ButtonGeneralTypes>({
     disabled,
     ...otherProps,
   };
+
+  if (typeButton === 'ButtonSquareLink' && Object.hasOwn(necessaryProps, 'href')) {
+    const buttonSquareLinkProps = necessaryProps as unknown as ButtonGeneralProps<'ButtonSquareLink'>;
+
+    return (
+      <ButtonSquareLink
+        href={buttonSquareLinkProps.href}
+        {...buttonSquareLinkProps}
+      >
+        {children}
+      </ButtonSquareLink>
+    );
+  }
 
   if (typeButton === 'ButtonIcon') {
     return (

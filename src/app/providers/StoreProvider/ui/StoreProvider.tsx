@@ -16,6 +16,7 @@ export const StoreProvider: FC<StoreProviderProps> = ({
   initialState,
   asyncReducers,
 }) => {
+  // TODO: перерисовки
   const navigate = useNavigate();
 
   const store = createReduxStore(

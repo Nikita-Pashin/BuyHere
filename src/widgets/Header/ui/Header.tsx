@@ -6,6 +6,8 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
 import { AvatarInHeader } from 'feature/AvatarInHeader';
+import { Link } from 'react-router-dom';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { TextXXXL } from '../../../shared/ui/Typography';
 import { Container } from '../../../shared/ui/Container';
 import s from './Header.module.scss';
@@ -14,7 +16,6 @@ export const Header = () => {
   const { t, i18n } = useTranslation();
   const { toggleTheme } = useTheme();
   const userAuthData = useSelector(getUserAuthData);
-
   const [isOpen, setIsOpen] = useState(false);
 
   const changeLanguage = () => {
@@ -47,7 +48,12 @@ export const Header = () => {
     <header className={s.header}>
       <Container className={s.headerContainer}>
         <TextXXXL bold>
-          {t('Buy here!')}
+          <Link
+            to={RoutePath.main}
+            className={s.logo}
+          >
+            {t('Buy here!')}
+          </Link>
         </TextXXXL>
         <div className={s.buttons}>
           <Button

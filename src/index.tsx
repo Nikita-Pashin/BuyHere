@@ -1,5 +1,5 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { StoreProvider } from 'app/providers/StoreProvider';
 import { App } from './app/App';
@@ -7,15 +7,15 @@ import { ThemeProvider } from './app/providers/ThemeProvider';
 import './shared/config/i18n/i18n';
 import './app/styles/index.scss';
 
-const root = createRoot(document.getElementById('root'));
-root.render(
+render(
   <React.StrictMode>
-    <ThemeProvider>
-      <BrowserRouter>
-        <StoreProvider>
+    <BrowserRouter>
+      <StoreProvider>
+        <ThemeProvider>
           <App />
-        </StoreProvider>
-      </BrowserRouter>
-    </ThemeProvider>
+        </ThemeProvider>
+      </StoreProvider>
+    </BrowserRouter>
   </React.StrictMode>,
+  document.getElementById('root'),
 );

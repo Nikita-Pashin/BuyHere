@@ -9,13 +9,13 @@ import './app/styles/index.scss';
 
 render(
   <React.StrictMode>
-    <BrowserRouter>
-      <StoreProvider>
-        <ThemeProvider>
+    <ThemeProvider>
+      <BrowserRouter>
+        <StoreProvider>
           <App />
-        </ThemeProvider>
-      </StoreProvider>
-    </BrowserRouter>
+        </StoreProvider>
+      </BrowserRouter>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

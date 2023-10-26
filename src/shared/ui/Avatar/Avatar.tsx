@@ -10,6 +10,7 @@ export const Avatar: FC<AvatarProps> = ({ className }) => (
   <Button
     typeButton="ButtonIcon"
     className={className}
+    tag="button"
   >
     <AvatarIcon />
   </Button>

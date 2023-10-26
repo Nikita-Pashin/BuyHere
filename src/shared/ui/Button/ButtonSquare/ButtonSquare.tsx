@@ -1,20 +1,19 @@
 import { FC, ReactNode } from 'react';
 import classNames from 'classnames';
 import s from './ButtonSquare.module.scss';
-import { CommonButtonProps } from '../types/CommonButtonProps';
+import { CommonButtonUIProps } from '../types/ButtonTypes';
 
 export type ButtonSquareProps = {
   stretch?: boolean,
   leftNode?: ReactNode,
   rightNode?: ReactNode,
-} & CommonButtonProps;
+} & CommonButtonUIProps;
 
 export const ButtonSquare: FC<ButtonSquareProps> = ({
   children, size, className, stretch, invertedTheme,
   nonInteractive, leftNode, rightNode, ...otherProps
 }) => (
-  <button
-    type="button"
+  <div
     className={classNames(
       s[size],
       className,
@@ -32,5 +31,5 @@ export const ButtonSquare: FC<ButtonSquareProps> = ({
     {rightNode && (
       <div className={s.rightNode}>{rightNode}</div>
     )}
-  </button>
+  </div>
 );

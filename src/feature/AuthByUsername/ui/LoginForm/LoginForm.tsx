@@ -78,6 +78,7 @@ const LoginForm: FC<LoginFormProps> = ({ onSuccess }) => {
           typeButton="ButtonSquare"
           onClick={onLoginClick}
           disabled={isLoading}
+          tag="button"
         >
           {t('Log in')}
         </Button>

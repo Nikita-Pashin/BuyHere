@@ -5,7 +5,7 @@ import s from './MenuItem.module.scss';
 type MenuItemProps = {
   label: string,
   href?: string,
-} & Pick<ButtonSquareProps, 'invertedTheme' | 'nonInteractive' | 'onClick' | 'leftNode' | 'rightNode'>;
+} & Pick<ButtonSquareProps, 'invertedTheme' | 'nonInteractive' | 'leftNode' | 'rightNode' | 'onClick'>;
 
 export const MenuItem: FC<MenuItemProps> = ({
   invertedTheme = true, href, label, nonInteractive, leftNode, rightNode, onClick,
@@ -13,14 +13,14 @@ export const MenuItem: FC<MenuItemProps> = ({
   if (href) {
     return (
       <Button
-        typeButton="ButtonSquareLink"
+        typeButton="ButtonSquare"
         className={s.menuItem}
         invertedTheme={invertedTheme}
         nonInteractive={nonInteractive}
         leftNode={leftNode}
         rightNode={rightNode}
-        href={href}
-        onClick={onClick}
+        to={href}
+        tag="Link"
       >
         {label}
       </Button>
@@ -36,6 +36,7 @@ export const MenuItem: FC<MenuItemProps> = ({
       leftNode={leftNode}
       rightNode={rightNode}
       onClick={onClick}
+      tag="button"
     >
       {label}
     </Button>

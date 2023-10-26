@@ -14,12 +14,14 @@ const Template: ComponentStory<typeof ButtonGeneral> = (args) => <ButtonGeneral 
 export const ButtonIconLightM = Template.bind({});
 ButtonIconLightM.args = {
   typeButton: 'ButtonIcon',
-  children: <div><IconSearch /></div>,
+  children: <IconSearch />,
+  tag: 'button',
 };
 
 export const ButtonIconDarkM = Template.bind({});
 ButtonIconDarkM.args = {
   typeButton: 'ButtonIcon',
   children: <IconSearch />,
+  tag: 'button',
 };
 ButtonIconDarkM.decorators = [ThemeDecorator(Theme.DARK)];

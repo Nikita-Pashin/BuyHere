@@ -39,6 +39,7 @@ export const Header = () => {
       typeButton="ButtonSquare"
       onClick={openAuthModal}
       className={s.btn}
+      tag="button"
     >
       {t('User')}
     </Button>
@@ -60,6 +61,7 @@ export const Header = () => {
             typeButton="ButtonSquare"
             onClick={changeLanguage}
             className={s.btn}
+            tag="button"
           >
             {t('Language')}
           </Button>
@@ -67,6 +69,7 @@ export const Header = () => {
             typeButton="ButtonSquare"
             onClick={toggleTheme}
             className={s.btn}
+            tag="button"
           >
             {t('Theme')}
           </Button>

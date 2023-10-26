@@ -1,62 +1,57 @@
 import classNames from 'classnames';
-import { CommonButtonProps } from '../types/CommonButtonProps';
 import { ButtonSquare, ButtonSquareProps } from '../ButtonSquare/ButtonSquare';
 import s from './ButtonGeneral.module.scss';
 import { ButtonIcon, ButtonIconProps } from '../ButtonIcon/ButtonIcon';
-import { ButtonSquareLink, ButtonSquareLinkProps } from '../ButtonSquareLink/ButtonSquareLink';
+import { ButtonWrapper, ButtonWrapperAttributes, ButtonWrapperProps } from '../ButtonWrapper/ButtonWrapper';
 
-type ButtonGeneralTypes = 'ButtonSquare' | 'ButtonSquareLink' | 'ButtonIcon';
+type ButtonGeneralTypes = 'ButtonSquare' | 'ButtonIcon';
 
 type ButtonGeneralTypeProps = {
   ButtonIcon: ButtonIconProps,
   ButtonSquare: ButtonSquareProps,
-  ButtonSquareLink: ButtonSquareLinkProps,
 };
 
-export type ButtonGeneralProps<T extends ButtonGeneralTypes> = {
-  className?: string;
+export type ButtonGeneralProps<T extends ButtonGeneralTypes, K extends ButtonWrapperProps['tag']> = {
   typeButton: T,
-} & ButtonGeneralTypeProps[T] & CommonButtonProps;
+  tag: K
+} & ButtonGeneralTypeProps[T] & ButtonWrapperAttributes[K];
 
-export const ButtonGeneral = <T extends ButtonGeneralTypes>({
-  typeButton, className, children, disabled, size = 'm', ...otherProps
-}: ButtonGeneralProps<T>) => {
+export const ButtonGeneral = <T extends ButtonGeneralTypes, K extends ButtonWrapperProps['tag']>({
+  typeButton, className, children, disabled, onClick, size = 'm', tag, ...otherProps
+}: ButtonGeneralProps<T, K>) => {
   const necessaryProps = {
     size,
     type: 'button',
-    className: classNames(className, s.generalButton, disabled && s.disabled),
+    className: '',
     disabled,
     ...otherProps,
   };
 
-  if (typeButton === 'ButtonSquareLink' && Object.hasOwn(necessaryProps, 'href')) {
-    const buttonSquareLinkProps = necessaryProps as unknown as ButtonGeneralProps<'ButtonSquareLink'>;
-
-    return (
-      <ButtonSquareLink
-        href={buttonSquareLinkProps.href}
-        {...buttonSquareLinkProps}
-      >
-        {children}
-      </ButtonSquareLink>
-    );
-  }
+  const buttonWrapperProps = { ...otherProps };
 
   if (typeButton === 'ButtonIcon') {
     return (
-      <ButtonIcon
-        {...necessaryProps}
+      <ButtonWrapper
+        tag={tag}
+        {...buttonWrapperProps}
       >
-        {children}
-      </ButtonIcon>
+        <ButtonIcon {...necessaryProps}>
+          {children}
+        </ButtonIcon>
+      </ButtonWrapper>
     );
   }
 
   return (
-    <ButtonSquare
-      {...necessaryProps}
+    <ButtonWrapper
+      tag={tag}
+      onClick={onClick}
+      className={classNames(className, disabled && s.disabled)}
+      {...buttonWrapperProps}
     >
-      {children}
-    </ButtonSquare>
+      <ButtonSquare {...necessaryProps}>
+        {children}
+      </ButtonSquare>
+    </ButtonWrapper>
   );
 };

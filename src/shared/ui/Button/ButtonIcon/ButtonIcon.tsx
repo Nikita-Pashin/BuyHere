@@ -1,9 +1,9 @@
 import { FC, ReactNode } from 'react';
 import classNames from 'classnames';
-import { ButtonBase, ButtonBaseProps } from '../ButtonBase/ButtonBase';
 import s from './ButtonIcon.module.scss';
+import { CommonButtonUIProps } from '../types/ButtonTypes';
 
-export interface ButtonIconProps extends ButtonBaseProps {
+export interface ButtonIconProps extends CommonButtonUIProps {
   children: ReactNode,
   round?: boolean,
 }
@@ -11,7 +11,7 @@ export interface ButtonIconProps extends ButtonBaseProps {
 export const ButtonIcon: FC<ButtonIconProps> = ({
   children, round, className, ...restProps
 }) => (
-  <ButtonBase
+  <div
     className={classNames(
       s.buttonIcon,
       round && s.round,
@@ -20,5 +20,5 @@ export const ButtonIcon: FC<ButtonIconProps> = ({
     {...restProps}
   >
     {children}
-  </ButtonBase>
+  </div>
 );

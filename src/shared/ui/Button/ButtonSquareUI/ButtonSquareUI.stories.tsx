@@ -14,13 +14,11 @@ export const ButtonSquareLightM = Template.bind({});
 ButtonSquareLightM.args = {
   children: 'Купить',
   typeButton: 'ButtonSquare',
-  onClick: () => {},
 };
 
 export const ButtonSquareDarkM = Template.bind({});
 ButtonSquareDarkM.args = {
   children: 'Купить',
   typeButton: 'ButtonSquare',
-  onClick: () => {},
 };
 ButtonSquareDarkM.decorators = [ThemeDecorator(Theme.DARK)];

@@ -1,24 +1,25 @@
 import { FC, ReactNode } from 'react';
-import classNames from 'classnames';
-import s from './ButtonIcon.module.scss';
-import { CommonButtonUIProps } from '../types/ButtonTypes';
+import { ButtonWrapper, ButtonWrapperProps } from '../ButtonWrapper/ButtonWrapper';
+import { ButtonIconUI, ButtonIconUIProps } from '../ButtonIconUI/ButtonIconUI';
 
-export interface ButtonIconProps extends CommonButtonUIProps {
-  children: ReactNode,
-  round?: boolean,
+export interface ButtonIconProps extends ButtonIconUIProps, ButtonWrapperProps {
+  children: ReactNode;
 }
 
 export const ButtonIcon: FC<ButtonIconProps> = ({
-  children, round, className, ...restProps
+  children, classNameButton, classNameWrapper, disabled,
+  invertedTheme, nonInteractive, round, size, ...restProps
 }) => (
-  <div
-    className={classNames(
-      s.buttonIcon,
-      round && s.round,
-      className,
-    )}
-    {...restProps}
-  >
-    {children}
-  </div>
+  <ButtonWrapper classNameWrapper={classNameWrapper} {...restProps}>
+    <ButtonIconUI
+      classNameButton={classNameButton}
+      disabled={disabled}
+      invertedTheme={invertedTheme}
+      nonInteractive={nonInteractive}
+      round={round}
+      size={size}
+    >
+      {children}
+    </ButtonIconUI>
+  </ButtonWrapper>
 );

@@ -1,6 +1,6 @@
 @import 'app/styles/globals/variables.scss';
 
-.buttonSquare {
+.buttonSquareUI {
   background-color: var(--inverted-bg-color);
   border: none;
   border-radius: $m-border-radius;
@@ -20,7 +20,7 @@
   }
 }
 
-.buttonSquare.invertedTheme {
+.buttonSquareUI.invertedTheme {
   background-color: var(--bg-color);
   color: var(--primary-color);
 

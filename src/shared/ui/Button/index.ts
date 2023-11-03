@@ -1,2 +1,3 @@
 export { ButtonGeneral as Button } from './ButtonGeneral/ButtonGeneral';
-export type { ButtonSquareProps } from './types/ButtonTypes';
+
+export type { ButtonGeneralTypes } from './types/ButtonTypes';

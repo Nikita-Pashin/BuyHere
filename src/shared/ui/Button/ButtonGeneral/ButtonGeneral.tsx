@@ -1,57 +1,78 @@
-import classNames from 'classnames';
+import { FC } from 'react';
 import { ButtonSquare, ButtonSquareProps } from '../ButtonSquare/ButtonSquare';
-import s from './ButtonGeneral.module.scss';
+import { CommonButtonUIProps } from '../types/ButtonTypes';
 import { ButtonIcon, ButtonIconProps } from '../ButtonIcon/ButtonIcon';
-import { ButtonWrapper, ButtonWrapperAttributes, ButtonWrapperProps } from '../ButtonWrapper/ButtonWrapper';
+import { AnchorSquare, AnchorSquareProps } from '../AnchorSquare/AnchorSquare';
+import { LinkSquare, LinkSquareProps } from '../LinkSquare/LinkSquare';
 
-type ButtonGeneralTypes = 'ButtonSquare' | 'ButtonIcon';
+interface GeneralButtonSquare extends ButtonSquareProps {
+  typeButton: 'ButtonSquare';
+}
 
-type ButtonGeneralTypeProps = {
-  ButtonIcon: ButtonIconProps,
-  ButtonSquare: ButtonSquareProps,
-};
+interface GeneralAnchorSquare extends AnchorSquareProps {
+  typeButton: 'AnchorSquare';
+}
 
-export type ButtonGeneralProps<T extends ButtonGeneralTypes, K extends ButtonWrapperProps['tag']> = {
-  typeButton: T,
-  tag: K
-} & ButtonGeneralTypeProps[T] & ButtonWrapperAttributes[K];
+interface GeneralLinkSquare extends LinkSquareProps {
+  typeButton: 'LinkSquare';
+}
 
-export const ButtonGeneral = <T extends ButtonGeneralTypes, K extends ButtonWrapperProps['tag']>({
-  typeButton, className, children, disabled, onClick, size = 'm', tag, ...otherProps
-}: ButtonGeneralProps<T, K>) => {
-  const necessaryProps = {
-    size,
-    type: 'button',
-    className: '',
-    disabled,
-    ...otherProps,
+interface GeneralButtonIcon extends ButtonIconProps {
+  typeButton: 'ButtonIcon';
+}
+
+export type ButtonGeneralProps =
+  GeneralButtonSquare | GeneralAnchorSquare | GeneralLinkSquare | GeneralButtonIcon;
+
+export const ButtonGeneral: FC<ButtonGeneralProps> = (props) => {
+  const nessaryProps: CommonButtonUIProps = {
+    size: 'm',
   };
 
-  const buttonWrapperProps = { ...otherProps };
+  const {
+    children,
+  } = props;
 
-  if (typeButton === 'ButtonIcon') {
-    return (
-      <ButtonWrapper
-        tag={tag}
-        {...buttonWrapperProps}
-      >
-        <ButtonIcon {...necessaryProps}>
+  switch (props.typeButton) {
+    case 'ButtonSquare':
+      return (
+        <ButtonSquare {...props} {...nessaryProps}>
+          {children}
+        </ButtonSquare>
+      );
+
+    case 'AnchorSquare':
+      return (
+        <AnchorSquare {...props} {...nessaryProps}>
+          {children}
+        </AnchorSquare>
+      );
+
+    case 'LinkSquare':
+      return (
+        <LinkSquare {...props} {...nessaryProps}>
+          {children}
+        </LinkSquare>
+      );
+
+    case 'ButtonIcon':
+      return (
+        <ButtonIcon {...props} {...nessaryProps}>
           {children}
         </ButtonIcon>
-      </ButtonWrapper>
-    );
-  }
+      );
 
-  return (
-    <ButtonWrapper
-      tag={tag}
-      onClick={onClick}
-      className={classNames(className, disabled && s.disabled)}
-      {...buttonWrapperProps}
-    >
-      <ButtonSquare {...necessaryProps}>
-        {children}
-      </ButtonSquare>
-    </ButtonWrapper>
-  );
+      // case 'AnchorIcon':
+      //   return (
+      //     <div>AnchorIcon</div>
+      //   );
+
+      // case 'LinkIcon':
+      //   return (
+      //     <div>LinkIcon</div>
+      //   );
+
+    default:
+      return null;
+  }
 };

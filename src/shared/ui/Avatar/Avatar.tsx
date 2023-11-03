@@ -9,8 +9,7 @@ interface AvatarProps {
 export const Avatar: FC<AvatarProps> = ({ className }) => (
   <Button
     typeButton="ButtonIcon"
-    className={className}
-    tag="button"
+    classNameButton={className}
   >
     <AvatarIcon />
   </Button>

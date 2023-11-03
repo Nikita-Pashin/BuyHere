@@ -1,14 +1,14 @@
 import { ComponentPropsWithoutRef, FC, ReactNode } from 'react';
 import { Wrapper } from '../Wrapper/Wrapper';
 
-export interface ButtonWrapperProps extends Omit<ComponentPropsWithoutRef<'button'>, 'className'> {
+export interface AnchorWrapperProps extends Omit<ComponentPropsWithoutRef<'a'>, 'className'> {
   children: ReactNode;
   classNameWrapper?: string;
 }
 
-export const ButtonWrapper: FC<ButtonWrapperProps> = ({ children, ...restProps }) => (
+export const AnchorWrapper: FC<AnchorWrapperProps> = ({ children, ...restProps }) => (
   <Wrapper
-    tag="button"
+    tag="a"
     {...restProps}
   >
     {children}

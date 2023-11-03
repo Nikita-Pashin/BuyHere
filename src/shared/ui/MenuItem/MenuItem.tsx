@@ -1,42 +1,47 @@
-import { FC } from 'react';
-import { Button, ButtonSquareProps } from 'shared/ui/Button';
+import { FC, MouseEventHandler } from 'react';
+import { Button, ButtonGeneralTypes } from 'shared/ui/Button';
 import s from './MenuItem.module.scss';
 
 type MenuItemProps = {
   label: string,
   href?: string,
-} & Pick<ButtonSquareProps, 'invertedTheme' | 'nonInteractive' | 'leftNode' | 'rightNode' | 'onClick'>;
+} & Pick<ButtonGeneralTypes['LinkSquare'] | ButtonGeneralTypes['ButtonSquare'], 'invertedTheme' | 'nonInteractive' | 'leftNode' | 'rightNode' | 'onClick'>;
 
-export const MenuItem: FC<MenuItemProps> = ({
-  invertedTheme = true, href, label, nonInteractive, leftNode, rightNode, onClick,
-}) => {
+export const MenuItem: FC<MenuItemProps> = (props) => {
+  const {
+    invertedTheme = true, href, label, nonInteractive, leftNode, rightNode, onClick,
+  } = props;
+
   if (href) {
+    const onClickLinkElement = onClick as MouseEventHandler<HTMLAnchorElement>;
+
     return (
       <Button
-        typeButton="ButtonSquare"
-        className={s.menuItem}
+        typeButton="LinkSquare"
+        classNameWrapper={s.menuItem}
         invertedTheme={invertedTheme}
         nonInteractive={nonInteractive}
         leftNode={leftNode}
         rightNode={rightNode}
         to={href}
-        tag="Link"
+        onClick={onClickLinkElement}
       >
         {label}
       </Button>
     );
   }
 
+  const onClickButtonElement = onClick as MouseEventHandler<HTMLButtonElement>;
+
   return (
     <Button
       typeButton="ButtonSquare"
-      className={s.menuItem}
+      classNameWrapper={s.menuItem}
       invertedTheme={invertedTheme}
       nonInteractive={nonInteractive}
       leftNode={leftNode}
       rightNode={rightNode}
-      onClick={onClick}
-      tag="button"
+      onClick={onClickButtonElement}
     >
       {label}
     </Button>

@@ -15,13 +15,11 @@ export const ButtonIconLightM = Template.bind({});
 ButtonIconLightM.args = {
   typeButton: 'ButtonIcon',
   children: <IconSearch />,
-  tag: 'button',
 };
 
 export const ButtonIconDarkM = Template.bind({});
 ButtonIconDarkM.args = {
   typeButton: 'ButtonIcon',
   children: <IconSearch />,
-  tag: 'button',
 };
 ButtonIconDarkM.decorators = [ThemeDecorator(Theme.DARK)];

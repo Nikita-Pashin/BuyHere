@@ -74,11 +74,10 @@ const LoginForm: FC<LoginFormProps> = ({ onSuccess }) => {
           />
         </div>
         <Button
-          className={s.button}
+          classNameButton={s.button}
           typeButton="ButtonSquare"
           onClick={onLoginClick}
           disabled={isLoading}
-          tag="button"
         >
           {t('Log in')}
         </Button>

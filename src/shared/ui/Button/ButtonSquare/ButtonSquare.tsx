@@ -1,35 +1,34 @@
-import { FC, ReactNode } from 'react';
-import classNames from 'classnames';
-import s from './ButtonSquare.module.scss';
-import { CommonButtonUIProps } from '../types/ButtonTypes';
+import { FC } from 'react';
+import { ButtonSquareUI, ButtonSquareUIProps } from '../ButtonSquareUI/ButtonSquareUI';
+import { ButtonWrapper, ButtonWrapperProps } from '../ButtonWrapper/ButtonWrapper';
 
-export type ButtonSquareProps = {
-  stretch?: boolean,
-  leftNode?: ReactNode,
-  rightNode?: ReactNode,
-} & CommonButtonUIProps;
+export type ButtonSquareProps = ButtonWrapperProps & ButtonSquareUIProps;
 
 export const ButtonSquare: FC<ButtonSquareProps> = ({
-  children, size, className, stretch, invertedTheme,
-  nonInteractive, leftNode, rightNode, ...otherProps
+  children,
+  classNameButton,
+  classNameWrapper,
+  disabled,
+  invertedTheme,
+  leftNode,
+  nonInteractive,
+  rightNode,
+  size,
+  stretch,
+  ...restProps
 }) => (
-  <div
-    className={classNames(
-      s[size],
-      className,
-      s.buttonSquare,
-      stretch && s.stretch,
-      invertedTheme && s.invertedTheme,
-      nonInteractive && s.nonInteractive,
-    )}
-    {...otherProps}
-  >
-    {leftNode && (
-      <div className={s.leftNode}>{leftNode}</div>
-    )}
-    {children}
-    {rightNode && (
-      <div className={s.rightNode}>{rightNode}</div>
-    )}
-  </div>
+  <ButtonWrapper classNameWrapper={classNameWrapper} disabled={disabled} {...restProps}>
+    <ButtonSquareUI
+      disabled={disabled}
+      invertedTheme={invertedTheme}
+      leftNode={leftNode}
+      nonInteractive={nonInteractive}
+      rightNode={rightNode}
+      size={size}
+      stretch={stretch}
+      classNameButton={classNameButton}
+    >
+      {children}
+    </ButtonSquareUI>
+  </ButtonWrapper>
 );

@@ -1,6 +1,6 @@
 import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { getProfileReadOnly } from './getProfileReadonly';
+import { getProfileReadOnly } from './getProfileReadOnly';
 
 describe('getProfileReadonly.test', () => {
   test('should return value', () => {

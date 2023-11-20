@@ -1,17 +1,28 @@
 @import 'app/styles/globals/variables';
 
 .avatar {
-  height: $size-48;
-  width: $size-48;
   background-color: var(--inverted-bg-color);
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: $easy-border;
+
+  img {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
   svg {
     height: $size-28;
     width: $size-28;
     fill: var(--bg-color);
   }
+}
+
+.round {
+  border-radius: 50%;
 }

@@ -22,8 +22,13 @@
     {
       "id": "1",
       "username": "admin",
-      "password": "123"
+      "password": "123",
+      "avatar_url": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstName": "Nikita",
+    "email": "temp@mail.com",
+    "username": "Nikita_Owner"
+  }
 }

@@ -1,9 +1,18 @@
 @import 'app/styles/globals/variables.scss';
 
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  margin-bottom: $spacing-4;
+}
+
 .input {
   color: var(--primary-color);
   font-family: $font-family-primary;
-  background-color: var(--bg-color-secondary);
+  background-color: var(--bg-color);
   border: 1px solid var(--inverted-bg-color);
   border-radius: $m-border-radius;
   transition: box-shadow 0.3s ease;
@@ -14,6 +23,10 @@
   }
 }
 
+.disabled {
+  background-color: var(--bg-color-secondary);
+}
+
 .stretch {
   width: 100%;
 }
@@ -22,4 +35,8 @@
   padding: $spacing-12;
 
   @include font-m(false);
+}
+
+sup {
+  color: red;
 }

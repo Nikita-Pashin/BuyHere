@@ -1,0 +1,7 @@
+@import 'app/styles/globals/variables';
+
+.input {
+  & ~ & {
+    margin-top: $spacing-12;
+  }
+}

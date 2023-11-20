@@ -6,6 +6,7 @@ import {
   EnhancedStore,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
+import { ProfileSchema } from 'entities/Profile/model/types/profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'feature/AuthByUsername/model/types/loginShema';
 import { NavigateFunction } from 'react-router-dom';
@@ -13,6 +14,7 @@ import { NavigateFunction } from 'react-router-dom';
 export interface StateSchema {
   user: UserSchema;
   login?: LoginSchema,
+  profile?: ProfileSchema,
 }
 
 export type StateSchemaKey = keyof StateSchema;

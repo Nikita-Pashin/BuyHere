@@ -5,13 +5,15 @@ import { NotFoundPage } from '../../../pages/NotFoundPage/index';
 
 export enum AppRoutes {
   MAIN = 'main',
-  PROFILE = 'profile',
+  PROFILE_ACCOUNT_DETAILS = 'profile_account_details',
+  PROFILE_BALANCE = 'profile_balance',
   NOT_FOUND = 'not_found',
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
-  [AppRoutes.PROFILE]: '/profile',
+  [AppRoutes.PROFILE_ACCOUNT_DETAILS]: '/profileAccountDetails',
+  [AppRoutes.PROFILE_BALANCE]: '/profileBalance',
   // Последний
   [AppRoutes.NOT_FOUND]: '*',
 };
@@ -21,8 +23,12 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     path: RoutePath.main,
     element: <MainPage />,
   },
-  [AppRoutes.PROFILE]: {
-    path: RoutePath.profile,
+  [AppRoutes.PROFILE_ACCOUNT_DETAILS]: {
+    path: RoutePath.profile_account_details,
+    element: <ProfilePage />,
+  },
+  [AppRoutes.PROFILE_BALANCE]: {
+    path: RoutePath.profile_balance,
     element: <ProfilePage />,
   },
   [AppRoutes.NOT_FOUND]: {

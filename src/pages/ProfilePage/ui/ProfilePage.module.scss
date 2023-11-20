@@ -1,0 +1,12 @@
+@import 'app/styles/globals/variables.scss';
+
+.profilePageContainer {
+  margin-top: $spacing-24;
+  display: grid;
+  grid-template-columns: 256px 1fr;
+  grid-gap: $spacing-16;
+}
+
+.profilePageNavigationClassName {
+  margin-top: $spacing-24;
+}

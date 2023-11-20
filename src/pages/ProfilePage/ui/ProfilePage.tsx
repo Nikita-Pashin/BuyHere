@@ -1,16 +1,25 @@
-import { useTranslation } from 'react-i18next';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Container } from 'shared/ui/Container';
 import { PageWrapper } from 'widgets/PageWrapper';
-import { RoutePath } from '../../../shared/config/routeConfig/routeConfig';
-import { AppLink } from '../../../shared/ui/AppLink';
+import { ProfilePageNavigation } from 'widgets/ProfilePageNavigation';
+import { Suspense } from 'react';
+import { ProfileAccountDetailsAsync } from 'widgets/ProfileAccountDetails';
+import s from './ProfilePage.module.scss';
 
-const ProfilePage = () => {
-  const { t } = useTranslation();
-
-  return (
-    <PageWrapper>
-      <AppLink to={RoutePath.main}>{t('Profile')}</AppLink>
-    </PageWrapper>
-  );
-};
+const ProfilePage = () => (
+  <PageWrapper>
+    <Container className={s.profilePageContainer}>
+      <div>
+        <Avatar size={256} round />
+        <ProfilePageNavigation className={s.profilePageNavigationClassName} />
+      </div>
+      <div>
+        <Suspense fallback="Loading...">
+          <ProfileAccountDetailsAsync />
+        </Suspense>
+      </div>
+    </Container>
+  </PageWrapper>
+);
 
 export default ProfilePage;

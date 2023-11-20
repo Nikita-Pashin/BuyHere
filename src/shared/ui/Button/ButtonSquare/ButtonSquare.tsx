@@ -15,9 +15,14 @@ export const ButtonSquare: FC<ButtonSquareProps> = ({
   rightNode,
   size,
   stretch,
+  isLoading,
   ...restProps
 }) => (
-  <ButtonWrapper classNameWrapper={classNameWrapper} disabled={disabled} {...restProps}>
+  <ButtonWrapper
+    classNameWrapper={classNameWrapper}
+    disabled={disabled || isLoading}
+    {...restProps}
+  >
     <ButtonSquareUI
       disabled={disabled}
       invertedTheme={invertedTheme}
@@ -27,6 +32,7 @@ export const ButtonSquare: FC<ButtonSquareProps> = ({
       size={size}
       stretch={stretch}
       classNameButton={classNameButton}
+      isLoading={isLoading}
     >
       {children}
     </ButtonSquareUI>

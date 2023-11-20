@@ -1,16 +1,31 @@
 import { FC } from 'react';
+import { getUserAvatarUrl } from 'entities/User';
+import classNames from 'classnames';
+import { useSelector } from 'react-redux';
 import AvatarIcon from 'shared/assets/icons/avatar.svg';
-import { Button } from 'shared/ui/Button';
+import s from './Avatar.module.scss';
 
-interface AvatarProps {
-  className?: string,
+export interface AvatarProps {
+  size?: number;
+  round?: boolean,
 }
 
-export const Avatar: FC<AvatarProps> = ({ className }) => (
-  <Button
-    typeButton="ButtonIcon"
-    classNameButton={className}
-  >
+export const Avatar: FC<AvatarProps> = (props) => {
+  const {
+    size = 48,
+    round,
+  } = props;
+
+  const avatar_url = useSelector(getUserAvatarUrl);
+
+  return avatar_url ? (
+    <div
+      style={{ height: `${size}px`, width: `${size}px` }}
+      className={classNames(s.avatar, round && s.round)}
+    >
+      <img alt="avatar_image" src={avatar_url} />
+    </div>
+  ) : (
     <AvatarIcon />
-  </Button>
-);
+  );
+};

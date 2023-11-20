@@ -1,0 +1,12 @@
+@import 'app/styles/globals/variables';
+
+.profilePageNavigation {
+  display: flex;
+  flex-direction: column;
+}
+
+.profilePageNavigationBtn {
+  & ~ & {
+    margin-top: $spacing-8;
+  }
+}

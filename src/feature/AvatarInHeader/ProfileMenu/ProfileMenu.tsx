@@ -26,7 +26,7 @@ export const ProfileMenu = () => {
       <MenuItem
         onClick={() => {}}
         label={t('My profile')}
-        href={RoutePath.profile}
+        href={RoutePath.profile_account_details}
         leftNode={<IconProfile />}
       />
       <Line />

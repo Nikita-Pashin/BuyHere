@@ -10,7 +10,7 @@ const MainPage: FC = () => {
   return (
     <PageWrapper>
       <div>
-        <AppLink to={RoutePath.profile}>{t('Profile')}</AppLink>
+        <AppLink to={RoutePath.profile_account_details}>{t('Profile')}</AppLink>
       </div>
     </PageWrapper>
   );

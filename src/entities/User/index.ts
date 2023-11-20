@@ -11,3 +11,7 @@ export {
 export {
   getUserAuthData,
 } from './model/selectors/getUserAuthData/getUserAuthData';
+
+export {
+  getUserAvatarUrl,
+} from './model/selectors/getUserAvatarUrl/getUserAvatarUrl';

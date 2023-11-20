@@ -1,0 +1,12 @@
+@import 'app/styles/globals/variables';
+
+.button {
+  & ~ & {
+    margin-left: $spacing-12;
+  }
+}
+
+.buttonsWrapper {
+  display: flex;
+  justify-content: flex-end;
+}

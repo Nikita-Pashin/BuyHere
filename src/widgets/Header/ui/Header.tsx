@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { memo, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button';
 import { LoginModal } from 'feature/AuthByUsername';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from 'entities/User';
+import { getUserAuthDataUsername } from 'entities/User';
 import { AvatarInHeader } from 'feature/AvatarInHeader';
 import { Link } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -12,10 +12,10 @@ import { TextXXXL } from '../../../shared/ui/Typography';
 import { Container } from '../../../shared/ui/Container';
 import s from './Header.module.scss';
 
-export const Header = () => {
+export const Header = memo(() => {
   const { t, i18n } = useTranslation();
   const { toggleTheme } = useTheme();
-  const userAuthData = useSelector(getUserAuthData);
+  const username = useSelector(getUserAuthDataUsername);
   const [isOpen, setIsOpen] = useState(false);
 
   const changeLanguage = () => {
@@ -30,7 +30,7 @@ export const Header = () => {
     setIsOpen(true);
   };
 
-  const LoginComponent = userAuthData ? (
+  const LoginComponent = useMemo(() => (username ? (
     <div className={s.avatar}>
       <AvatarInHeader />
     </div>
@@ -42,7 +42,7 @@ export const Header = () => {
     >
       {t('User')}
     </Button>
-  );
+  )), [t, username]);
 
   return (
     <header className={s.header}>
@@ -80,4 +80,4 @@ export const Header = () => {
       />
     </header>
   );
-};
+});

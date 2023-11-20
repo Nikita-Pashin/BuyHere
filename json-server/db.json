@@ -29,6 +29,7 @@
   "profile": {
     "firstName": "Nikita",
     "email": "temp@mail.com",
-    "username": "Nikita_Owner"
+    "username": "Nikita_Owner",
+    "age": "30"
   }
 }

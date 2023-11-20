@@ -20,6 +20,7 @@ const ProfileAccountDetails = () => {
   return (
     <DynamicModuleLoader
       reducers={initialReducers}
+      removeAfterUnmount
     >
       <EditableProfile />
       <EditableProfileButtons className={s.editableProfileButtons} />

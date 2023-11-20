@@ -11,7 +11,8 @@ export const App = () => {
 
   useEffect(() => {
     dispatch(userActions.initAuthData());
-  }, [dispatch]);
+    // eslint-disable-next-line
+  }, []);
 
   return (
     // TODO: duringChangeTheme refacoring

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { getUserAvatarUrl } from 'entities/User';
 import classNames from 'classnames';
 import { useSelector } from 'react-redux';
@@ -10,7 +10,7 @@ export interface AvatarProps {
   round?: boolean,
 }
 
-export const Avatar: FC<AvatarProps> = (props) => {
+export const Avatar: FC<AvatarProps> = memo((props) => {
   const {
     size = 48,
     round,
@@ -28,4 +28,4 @@ export const Avatar: FC<AvatarProps> = (props) => {
   ) : (
     <AvatarIcon />
   );
-};
+});

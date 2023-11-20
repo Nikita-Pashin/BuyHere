@@ -2,7 +2,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Container } from 'shared/ui/Container';
 import { PageWrapper } from 'widgets/PageWrapper';
 import { ProfilePageNavigation } from 'widgets/ProfilePageNavigation';
-import { Suspense } from 'react';
+import { Suspense, memo } from 'react';
 import { ProfileAccountDetailsAsync } from 'widgets/ProfileAccountDetails';
 import s from './ProfilePage.module.scss';
 
@@ -22,4 +22,4 @@ const ProfilePage = () => (
   </PageWrapper>
 );
 
-export default ProfilePage;
+export default memo(ProfilePage);

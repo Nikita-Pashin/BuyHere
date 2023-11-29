@@ -41,5 +41,10 @@
   "Change": "Изменить",
   "Cancel": "Отмена",
   "Save": "Сохранить",
-  "Loading": "Загрузка"
+  "Loading": "Загрузка",
+  "Server error": "Серверная ошибка",
+  "Incorrect user data": "Неверные данные пользователя",
+  "Incorrect user age": "Неверный возраст пользователя",
+  "Incorrect user country": "Неверная страна пользователя",
+  "No data": "Нет данных"
 }

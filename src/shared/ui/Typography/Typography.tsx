@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import classNames from 'classnames';
 import s from './Typography.module.scss';
 
@@ -13,7 +13,7 @@ interface TypographyConstructorProps {
 
 type TypographyProps = Omit<TypographyConstructorProps, 'variant'>;
 
-const Typography: FC<TypographyConstructorProps> = ({
+const Typography: FC<TypographyConstructorProps> = memo(({
   variant, children, bold, as = 'span', className, ...restProps
 }) => {
   const Component = as;
@@ -26,7 +26,7 @@ const Typography: FC<TypographyConstructorProps> = ({
       {children}
     </Component>
   );
-};
+});
 
 export const TextXS: FC<TypographyProps> = ({
   children, ...restProps
@@ -94,7 +94,7 @@ export const TextXXL: FC<TypographyProps> = ({
   </Typography>
 );
 
-export const TextXXXL: FC<TypographyProps> = ({
+export const TextXXXL: FC<TypographyProps> = memo(({
   children, ...restProps
 }) => (
   <Typography
@@ -103,4 +103,4 @@ export const TextXXXL: FC<TypographyProps> = ({
   >
     {children}
   </Typography>
-);
+));

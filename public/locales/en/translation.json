@@ -41,5 +41,10 @@
   "Change": "Change",
   "Cancel": "Cancel",
   "Save": "Save",
-  "Loading": "Loading"
+  "Loading": "Loading",
+  "Server error": "Server error",
+  "Incorrect user data": "Incorrect user data",
+  "Incorrect user age": "Incorrect user age",
+  "Incorrect user country": "Incorrect user country",
+  "No data": "No data"
 }

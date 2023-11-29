@@ -20,6 +20,7 @@ const profileSlice = createSlice({
     cancelEdit: (state) => {
       state.readOnly = true;
       state.form = state.data;
+      state.validateError = undefined;
     },
     updateProfileForm: (state, { payload }: PayloadAction<Profile>) => {
       state.form = {
@@ -47,14 +48,15 @@ const profileSlice = createSlice({
       state.data = payload;
       state.form = payload;
       state.readOnly = true;
+      state.validateError = undefined;
     },
     [updateProfileData.pending.type]: (state) => {
       state.isLoading = true;
-      state.error = undefined;
+      state.validateError = undefined;
     },
-    [updateProfileData.rejected.type]: (state) => {
+    [updateProfileData.rejected.type]: (state, action) => {
       state.isLoading = false;
-      state.error = 'There was an error update the profile';
+      state.validateError = action.payload;
     },
   },
 });

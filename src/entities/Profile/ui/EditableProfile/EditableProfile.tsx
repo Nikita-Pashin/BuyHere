@@ -8,7 +8,7 @@ import {
   getProfileDataCountry, getProfileDataCity, getProfileDataUsername,
   getProfileDataSecondName, getProfileDataFirstName, getProfileIsLoading, getProfileReadOnly,
   getProfileFormEmail, getProfileFormAge, getProfileFormFirstName, getProfileFormSecondName,
-  getProfileFormUsername, getProfileFormCountry, getProfileFormCity,
+  getProfileFormUsername, getProfileFormCountry, getProfileFormCity, getProfileValidateErorrs,
 } from 'entities/Profile';
 import s from './EditableProfile.module.scss';
 
@@ -34,6 +34,7 @@ export const EditableProfile = () => {
 
   const isLoading = useSelector(getProfileIsLoading);
   const readOnly = useSelector(getProfileReadOnly);
+  const validateErrors = useSelector(getProfileValidateErorrs);
 
   const email = readOnly ? dataEmail : formEmail;
   const age = readOnly ? dataAge : formAge;
@@ -150,6 +151,9 @@ export const EditableProfile = () => {
         placeholder={readOnly ? 'City missing' : 'Enter your city'}
         readOnly={readOnly}
       />
+      {validateErrors && validateErrors.map((err) => (
+        <div key={err}>{t(err)}</div>
+      ))}
     </div>
   );
 };

@@ -18,6 +18,7 @@ export { getProfileFormUsername } from './model/selectors/getProfileFormUsername
 export { getProfileFormCity } from './model/selectors/getProfileFormCity/getProfileFormCity';
 export { getProfileIsLoading } from './model/selectors/getProfileIsLoading/getProfileIsLoading';
 export { getProfileReadOnly } from './model/selectors/getProfileReadOnly/getProfileReadOnly';
+export { getProfileValidateErorrs } from './model/selectors/getProfileValidateErorrs/getProfileValidateErorrs';
 export { EditableProfile } from './ui/EditableProfile/EditableProfile';
 export { EditableProfileButtons } from './ui/EditableProfileButtons/EditableProfileButtons';
 export { Profile, ProfileSchema } from './model/types/profile';

@@ -20,7 +20,8 @@ export const ButtonSquare: FC<ButtonSquareProps> = ({
 }) => (
   <ButtonWrapper
     classNameWrapper={classNameWrapper}
-    disabled={disabled || isLoading}
+    disabled={disabled}
+    nonInteractive={nonInteractive}
     {...restProps}
   >
     <ButtonSquareUI

@@ -9,15 +9,18 @@ export interface ButtonIconUIProps extends CommonButtonUIProps {
 }
 
 export const ButtonIconUI: FC<ButtonIconUIProps> = ({
-  children, round, classNameButton, ...restProps
+  children, round, classNameButton, disabled, invertedTheme, nonInteractive, size,
 }) => (
   <div
     className={classNames(
       s.buttonIconUI,
       round && s.round,
       classNameButton,
+      s[size],
+      disabled && s.disabled,
+      invertedTheme && s.invertedTheme,
+      nonInteractive && s.nonInteractive,
     )}
-    {...restProps}
   >
     {children}
   </div>

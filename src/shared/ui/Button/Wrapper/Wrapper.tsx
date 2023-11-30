@@ -15,10 +15,14 @@ export type WrapperProps = {
   tag: WrapperTags;
   children: React.ReactNode;
   classNameWrapper?: string,
+  nonInteractive?: boolean,
+  disabled?: boolean,
+  // TODO: Fix
+  typeButton?: any,
 };
 
 export const Wrapper: FC<WrapperProps> = ({
-  children, tag = 'button', classNameWrapper, ...restProps
+  children, tag = 'button', classNameWrapper, disabled, nonInteractive, typeButton, ...restProps
 }) => {
   if (tag === 'a') {
     const restPropsCopy = { ...restProps } as WrapperAttributes['a'];
@@ -42,7 +46,7 @@ export const Wrapper: FC<WrapperProps> = ({
 
   const restPropsCopy = { ...restProps } as WrapperAttributes['button'];
   return (
-    <button className={classNames(s.button, classNameWrapper)} type="button" {...restPropsCopy}>
+    <button disabled={disabled} className={classNames(s.button, classNameWrapper, nonInteractive && s.nonInteractive)} type="button" {...restPropsCopy}>
       {children}
     </button>
   );

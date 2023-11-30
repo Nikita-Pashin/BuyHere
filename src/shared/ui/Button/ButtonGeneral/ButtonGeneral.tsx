@@ -25,15 +25,16 @@ export type ButtonGeneralProps =
   GeneralButtonSquare | GeneralAnchorSquare | GeneralLinkSquare | GeneralButtonIcon;
 
 export const ButtonGeneral: FC<ButtonGeneralProps> = (props) => {
+  const {
+    children,
+    typeButton,
+  } = props;
+
   const nessaryProps: CommonButtonUIProps = {
     size: 'm',
   };
 
-  const {
-    children,
-  } = props;
-
-  switch (props.typeButton) {
+  switch (typeButton) {
     case 'ButtonSquare':
       return (
         <ButtonSquare {...props} {...nessaryProps}>

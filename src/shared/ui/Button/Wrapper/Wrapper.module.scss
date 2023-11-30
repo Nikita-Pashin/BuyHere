@@ -6,3 +6,7 @@
   display: block;
   text-decoration: none;
 }
+
+.nonInteractive {
+  pointer-events: none;
+}

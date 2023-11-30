@@ -1,10 +1,8 @@
-import { ComponentPropsWithoutRef, FC, ReactNode } from 'react';
-import { Wrapper } from '../Wrapper/Wrapper';
+import { ComponentPropsWithoutRef, FC } from 'react';
+import { Optional } from 'shared/types/commonTypes';
+import { Wrapper, WrapperProps } from '../Wrapper/Wrapper';
 
-export interface ButtonWrapperProps extends Omit<ComponentPropsWithoutRef<'button'>, 'className'> {
-  children: ReactNode;
-  classNameWrapper?: string;
-}
+export interface ButtonWrapperProps extends Omit<ComponentPropsWithoutRef<'button'>, 'className' | 'children'>, Optional<WrapperProps> {}
 
 export const ButtonWrapper: FC<ButtonWrapperProps> = ({ children, ...restProps }) => (
   <Wrapper

@@ -17,3 +17,5 @@ declare module '*.svg' {
 declare const __IS_DEV__: boolean;
 // eslint-disable-next-line
 declare const __API__: string;
+// eslint-disable-next-line
+declare const __PROJECT__: string;

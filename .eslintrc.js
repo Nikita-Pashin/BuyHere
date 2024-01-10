@@ -76,6 +76,7 @@ module.exports = {
       'always',
     ],
     'react/jsx-props-no-spreading': 0,
+    'no-underscore-dangle': 0,
     'react/no-array-index-key': 0,
     'react/display-name': 0,
     'import/prefer-default-export': 0,
